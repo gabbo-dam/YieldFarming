@@ -9,7 +9,7 @@ const theme = {
     brown,
     primary: {
       light: red[200],
-      main: red[500],
+      main: teal[200],
     },
     secondary: {
       main: teal[200],

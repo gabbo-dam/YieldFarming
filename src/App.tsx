@@ -15,10 +15,12 @@ import theme from './theme';
 import config from './config';
 import Updaters from './state/Updaters';
 import Popups from './components/Popups';
+import Background from './components/Background'
 
 const App: React.FC = () => {
   return (
     <Providers>
+      <Background>
       <Router>
         <Switch>
           <Route path="/farm">
@@ -27,6 +29,7 @@ const App: React.FC = () => {
           <Redirect from="/" to="farm" />
         </Switch>
       </Router>
+      </Background>
     </Providers>
   );
 };

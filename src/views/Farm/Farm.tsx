@@ -13,6 +13,7 @@ import Stake from './components/Stake';
 import useFarm from '../../hooks/useFarm';
 import useRedeem from '../../hooks/useRedeem';
 import { Farm as FarmEntity } from '../../layerx';
+import Wallet from '../../icons/wallet'
 
 const Farm: React.FC = () => {
   useEffect(() => window.scrollTo(0, 0));
@@ -26,7 +27,7 @@ const Farm: React.FC = () => {
   return account && farm ? (
     <>
       <PageHeader
-        icon="🏦"
+        icon=""
         subtitle={`Deposit ${farm?.depositTokenName} and earn ${farm?.earnTokenName}`}
         title={farm?.name}
       />
@@ -43,8 +44,8 @@ const Farm: React.FC = () => {
         <Spacer size="lg" />
         {farm.depositTokenName.includes('LP') && <LPTokenHelpText farm={farm} />}
         <Spacer size="lg" />
-        <div>
-          <Button onClick={onRedeem} text="Settle & Withdraw" />
+        <div style={{width:'308px'}}>
+          <Button onClick={onRedeem} text="Settle & Withdraw" variant='secondary' size='sm' />
         </div>
         <Spacer size="lg" />
       </StyledFarm>
@@ -70,7 +71,7 @@ const LPTokenHelpText: React.FC<{ farm: FarmEntity }> = ({ farm }) => {
   uniswapUrl = '#';
   return (
     <StyledLink href={uniswapUrl}>
-      {`🦄  Provide liquidity to ${pairName} on Uniswap  🦄`}
+      {`Provide liquidity to ${pairName} on Uniswap `}
     </StyledLink>
   );
 };
@@ -90,8 +91,10 @@ const FarmNotFound = () => {
 const UnlockWallet = () => {
   const { connect } = useWallet();
   return (
-    <Center>
-      <Button onClick={() => connect('injected')} text="Unlock Wallet" />
+    <Center style={{ width:'600px'}}>
+      <Button onClick={() => connect('injected')} text="Unlock Wallet" size='md' >
+        <Wallet style={{marginRight:'15px', marginLeft:'-35px'}}/>
+      </Button>
     </Center>
   );
 };
@@ -117,7 +120,7 @@ const StyledLink = styled.a`
 
 const StyledCardsWrapper = styled.div`
   display: flex;
-  width: 600px;
+  width: 700px;
   @media (max-width: 768px) {
     width: 100%;
     flex-flow: column nowrap;

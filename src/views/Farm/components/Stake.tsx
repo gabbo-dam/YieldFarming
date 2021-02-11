@@ -24,6 +24,7 @@ import WithdrawModal from './WithdrawModal';
 import TokenSymbol from '../../../components/TokenSymbol';
 import { Farm } from '../../../layerx';
 
+
 interface StakeProps {
   farm: Farm;
 }
@@ -81,10 +82,15 @@ const Stake: React.FC<StakeProps> = ({ farm }) => {
               })()}
             </CardIcon>
             <Value value={getDisplayBalance(stakedBalance, farm.depositToken.decimal)} />
+            <div style={{textAlign: 'center'}}>
             <Label text={`${farm.depositTokenName} Staked`} />
+            </div>
           </StyledCardHeader>
           <StyledCardActions>
             {approveStatus !== ApprovalState.APPROVED ? (
+              <div style={{textAlign: 'center'}}>
+
+              
               <Button
                 disabled={
                   approveStatus == ApprovalState.PENDING ||
@@ -92,7 +98,10 @@ const Stake: React.FC<StakeProps> = ({ farm }) => {
                 }
                 onClick={approve}
                 text={`Approve ${farm.depositTokenName}`}
+                size='lg'
+               
               />
+               </div>
             ) : (
               <>
                 <IconButton onClick={onPresentWithdraw}>

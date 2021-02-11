@@ -18,7 +18,7 @@ const TopBar: React.FC = () => {
           <div style={{ flex: 1 }}>
             <Logo />
           </div>
-          <Nav />
+          {/* <Nav /> */}
           <div style={{
             flex: 1,
             display: 'flex',
@@ -33,7 +33,9 @@ const TopBar: React.FC = () => {
   )
 }
 
-const StyledTopBar = styled.div``
+const StyledTopBar = styled.div`
+  background-color: #1A2848;  
+`
 
 const StyledTopBarInner = styled.div`
   align-items: center;

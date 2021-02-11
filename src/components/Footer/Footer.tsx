@@ -6,7 +6,7 @@ import Nav from './components/Nav'
 const Footer: React.FC = () => (
   <StyledFooter>
     <StyledFooterInner>
-      <Nav />
+      {/* <Nav /> */}
     </StyledFooterInner>
   </StyledFooter>
 )

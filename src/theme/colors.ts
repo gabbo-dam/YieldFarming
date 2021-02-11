@@ -9,7 +9,7 @@ export const purple = {
   200: '#bd7cfe',
   400: '#ab47bc',
   700: '#7b1fa2',
-  900: '#50248f'
+  900: '#FF48A1'
 }
 
 export const red = {
@@ -37,5 +37,5 @@ export const brown = {
 export const bg = '#000000';
 
 export const teal = {
-  200: '#64ffda'
+  200: '#B7C8EC'
 }

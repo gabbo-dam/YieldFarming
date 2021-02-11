@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 
 import { Link } from 'react-router-dom'
+import Background from '../Background'
 
 interface ButtonProps {
   children?: React.ReactNode,
@@ -29,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   let buttonColor: string
   switch (variant) {
     case 'secondary':
-      buttonColor = color.primary.main
+      buttonColor = '#43D26F'
       break
     case 'default':
     default:
@@ -43,18 +44,18 @@ const Button: React.FC<ButtonProps> = ({
   switch (size) {
     case 'sm':
       buttonPadding = spacing[3]
-      buttonSize = 36
+      buttonSize = 43
       fontSize = 14
       break
     case 'lg':
       buttonPadding = spacing[4]
-      buttonSize = 72
+      buttonSize = 60
       fontSize = 16
       break
     case 'md':
     default:
       buttonPadding = spacing[4]
-      buttonSize = 56
+      buttonSize = 50
       fontSize = 16
   }
 
@@ -77,6 +78,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       padding={buttonPadding}
       size={buttonSize}
+      background={variant}
     >
       {children}
       {ButtonChild}
@@ -90,18 +92,19 @@ interface StyledButtonProps {
   disabled?: boolean,
   fontSize: number,
   padding: number,
-  size: number
+  size: number,
+  background?: 'default' | 'secondary' | 'tertiary'
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-  min-width: 120px;
-  min-height: 34px;
+  width: 120px;
+  height: 50px;
   align-items: center;
-  background-color: ${props => props.theme.color.purple[900]};
-  border: 0;
-  border-radius: 58px;
+  background-color: ${props => props.background==='secondary' ? '#43D26F' : ( props.background==='tertiary' ? '#1A2848' : '#FF48A1')};
+  border: ${props => props.background==='tertiary' ? '1px solid #FF48A1' : '0'};
+  border-radius: 5px;
   box-shadow: ${props => props.boxShadow};
-  color: ${props => !props.disabled ? props.color : `${props.color}55`};
+  color: ${props => props.background==='secondary' ? '#000000' : ( props.background==='tertiary' ? '#FF48A1' : '#ffffff')};
   cursor: pointer;
   display: flex;
   font-size: ${props => props.fontSize}px;
@@ -114,8 +117,8 @@ const StyledButton = styled.button<StyledButtonProps>`
   pointer-events: ${props => !props.disabled ? undefined : 'none'};
   width: 100%;
   &:hover {
-    background-color: ${props => props.color};
-    color: ${props => props.theme.color.grey[900]};
+    // background-color: ${props => props.color};
+    // color: ${props => props.theme.color.grey[900]};
   }
 `
 
