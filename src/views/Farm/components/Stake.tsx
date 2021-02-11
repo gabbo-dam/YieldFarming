@@ -82,7 +82,7 @@ const Stake: React.FC<StakeProps> = ({ farm }) => {
               })()}
             </CardIcon>
             <Value value={getDisplayBalance(stakedBalance, farm.depositToken.decimal)} />
-            <div style={{textAlign: 'center'}}>
+            <div style={{textAlign: 'center', width: '90%'}}>
             <Label text={`${farm.depositTokenName} Staked`} />
             </div>
           </StyledCardHeader>
@@ -131,7 +131,7 @@ const StyledCardHeader = styled.div`
 const StyledCardActions = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: ${(props) => props.theme.spacing[6]}px;
+  margin-top: 0   ;
   width: 100%;
 `;
 

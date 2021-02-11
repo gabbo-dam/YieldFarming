@@ -27,7 +27,7 @@ const Farm: React.FC = () => {
   return account && farm ? (
     <>
       <PageHeader
-        icon=""
+        
         subtitle={`Deposit ${farm?.depositTokenName} and earn ${farm?.earnTokenName}`}
         title={farm?.name}
       />

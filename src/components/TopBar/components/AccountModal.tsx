@@ -9,6 +9,7 @@ import Modal, { ModalProps } from '../../Modal';
 import ModalTitle from '../../ModalTitle';
 import useLayerx from '../../../hooks/useLayerx';
 import TokenSymbol from '../../TokenSymbol';
+import Cross from '../../../icons/cross'
 
 const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const layerx = useLayerx();
@@ -24,11 +25,17 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
 
   return (
     <Modal>
+      <div style={{ textAlign:'right'}}>
+        <Cross />
+      </div>
       <ModalTitle text="My Wallet" />
 
       <Balances>
         <StyledBalanceWrapper>
-          <TokenSymbol symbol="LAYERx" />
+          <div style={{margin: '30px 0'}}>
+
+          <TokenSymbol symbol="VoodooShare" />
+          </div>
           <StyledBalance>
             <StyledValue>{displayBacBalance}</StyledValue>
             <Label text="LAYERx Available" />

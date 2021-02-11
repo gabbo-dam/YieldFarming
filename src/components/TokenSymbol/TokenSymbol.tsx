@@ -10,6 +10,7 @@ import USDTLogo from '../../assets/img/USDT.png';
 import Layerx from '../../icons/layerx'
 import VoodooShare from '../../icons/voodooshare'
 import VoodooBond from '../../icons/voodoobond'
+import iconchehat from '../../img/iconchefhat.svg'
 
 const logosBySymbol: {[title: string]: string} = {
   'VDD': vddLogo,
@@ -43,7 +44,7 @@ const TokenSymbol: React.FC<VoodooLogoProps> = ({ symbol, size = 64 }) => {
   } else if (symbol==='ETH_PROPHET-UNI-LPv2') {
     return <img width={64} height={64} style={{borderRadius:'50px'}} src="https://i.ibb.co/xHHgKJ4/icon.jpg" alt="Trinity"/>
   } else if (symbol==='LAYERx_ETH-UNI-LPv2') {
-    return <img width={64} height={64} src="https://assets.coingecko.com/coins/images/13379/small/trinity_logo.png?1608030983" alt="Trinity"/>
+    return <img width={64} height={64} src={iconchehat} alt={iconchehat} />
   }else {
     return (
       <img

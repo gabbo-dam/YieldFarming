@@ -4,11 +4,14 @@ import styled from 'styled-components';
 import farmer from '../../assets/img/farmer.png';
 import Layerx from '../../icons/layerx'
 
+import logo from '../../img/logo.png'
+
 const Logo: React.FC = () => {
   return (
     <StyledLogo>
-      <Layerx src={farmer} height="40" style={{ marginTop: -4 }}/>
-      <StyledLink href="/">LAYERx Farming</StyledLink>
+      <StyledLink href="/">
+        <img src={logo} alt="logo"/>
+      </StyledLink>
     </StyledLogo>
   );
 };

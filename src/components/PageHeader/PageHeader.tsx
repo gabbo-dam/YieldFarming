@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Layerx from '../../icons/layerx'
 
 interface PageHeaderProps {
-  icon: React.ReactNode,
+  icon?: React.ReactNode,
   subtitle?: string,
   title?: string,
 }
@@ -31,7 +31,7 @@ const StyledPageHeader = styled.div`
 
 const StyledIcon = styled.div`
   font-size: 96px;
-  height: 162px;
+  height: 100px;
   line-height: 96px;
   text-align: center;
   width: 162px;
@@ -46,10 +46,10 @@ const StyledTitle = styled.h1`
 `
 
 const StyledSubtitle = styled.h3`
-  color: ${props => props.theme.color.grey[400]};
+  color: #B7C8EC;
   font-size: 18px;
   font-weight: 400;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0;
   text-align: center;
 `

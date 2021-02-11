@@ -9,6 +9,8 @@ import ModalActions from '../../ModalActions';
 import Spacer from '../../Spacer';
 import { isTransactionRecent, useAllTransactions, useClearAllTransactions } from '../../../state/transactions/hooks';
 import { Trash } from 'react-feather';
+import Trans from '../../../icons/transaction/'
+import Cross from '../../../icons/cross'
 
 const TxModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const allTransactions = useAllTransactions();
@@ -25,8 +27,12 @@ const TxModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const isEmpty = (confirmed?.length + pending?.length) == 0;
   return (
     <StyledModal>
+      <div style={{ textAlign:'right'}}>
+        <Cross />
+      </div>
       <StyledTitleArea>
-        <StyledModalTitle>Transactions</StyledModalTitle>
+      
+        <StyledModalTitle style={{textAlign: 'center', fontSize:'24px'}}>Transactions</StyledModalTitle>
         {confirmed?.length > 0 && (
           <StyledClearIconWrapper>
             <Trash onClick={clearAllTransactions} size="16" />
@@ -51,11 +57,14 @@ const TxModal: React.FC<ModalProps> = ({ onDismiss }) => {
         </>
       )}
       {isEmpty && (
-        <Label text="No transactions." color="#777" />
+        <Center>
+          <img src={require('../../../icons/transaction/transaction.svg')} alt='transaction' style={{margin: '30px 0'}} />
+          <Label text="No transactions." color="#B7C8EC" />
+        </Center>
       )}
-      <ModalActions>
+      {/* <ModalActions>
         <Button text="Close" onClick={onDismiss} />
-      </ModalActions>
+      </ModalActions> */}
     </StyledModal>
   )
 }
@@ -67,6 +76,7 @@ const StyledModal = styled(Modal)`
 const StyledTitleArea = styled.div`
   display: flex;
   align-items: center;
+  
   height: ${props => props.theme.topBarSize}px;
   margin-top: ${props => -props.theme.spacing[4]}px;
 `;
@@ -85,6 +95,14 @@ const StyledClearIconWrapper = styled.div`
 const StyledTransactionList = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Center = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
 
 // we want the latest one to come first, so return negative if a is after b

@@ -35,7 +35,7 @@ interface StyledLabelProps {
 
 const StyledLabel = styled.div<StyledLabelProps>`
   color: ${props => props.color};
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   margin: 10px 0px;
 `

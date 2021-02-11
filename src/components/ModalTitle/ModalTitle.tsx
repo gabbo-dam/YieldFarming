@@ -15,7 +15,7 @@ const StyledModalTitle = styled.div`
   align-items: center;
   color: ${props => props.theme.color.grey[300]};
   display: flex;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   height: ${props => props.theme.topBarSize}px;
   justify-content: center;

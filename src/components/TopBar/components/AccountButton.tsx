@@ -9,6 +9,7 @@ import { formatAddress } from '../../../utils'
 import Button from '../../Button'
 
 import AccountModal from './AccountModal'
+import Wallet from '../../../icons/wallet'
 
 interface AccountButtonProps {}
 
@@ -23,14 +24,18 @@ const AccountButton: React.FC<AccountButtonProps> = (props) => {
         <Button
           onClick={() => connect('injected')}
           size="sm"
-          text="Unlock Wallet"
-        />
+          text="Connect Wallet"
+        >
+          <Wallet style={{marginRight:'15px'}}/>
+        </Button>
       ) : (
         <Button
           onClick={onPresentAccountModal}
           size="sm"
           text="My Wallet"
-        />
+        >
+          <Wallet style={{marginRight:'15px'}}/>
+        </Button>
       )}
     </StyledAccountButton>
   )
