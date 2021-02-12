@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 import background from "../../img/background.png";
+import mobilebackground from '../../img/mobilebackground.png'
 
 
 const Background: React.FC = (props) => {
   return(
-  <StyledBackground style={{backgroundImage: `url(${background})`}}> 
+  <StyledBackground style={{
+    backgroundImage: `url(${background})`
+    }}> 
     {props.children}
   </StyledBackground>
 

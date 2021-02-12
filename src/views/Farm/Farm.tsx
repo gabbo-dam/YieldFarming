@@ -91,9 +91,12 @@ const FarmNotFound = () => {
 const UnlockWallet = () => {
   const { connect } = useWallet();
   return (
-    <Center style={{ width:'600px'}}>
+    <Center >
       <Button onClick={() => connect('injected')} text="Unlock Wallet" size='md' >
-        <Wallet style={{marginRight:'15px', marginLeft:'-35px'}}/>
+        <StyledWallet>
+          
+          <Wallet />
+        </StyledWallet>
       </Button>
     </Center>
   );
@@ -140,8 +143,20 @@ const StyledCardWrapper = styled.div`
 const Center = styled.div`
   display: flex;
   flex: 1;
+  width: 600px;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 768px){
+    width: 280px;
+}
+`;
+const StyledWallet = styled.div`
+
+  margin: 0 15px 0 -35px;
+
+  @media only screen and (max-width: 768px){
+    margin: 0 15px 0 0;
+  }
 `;
 
 export default Farm;
