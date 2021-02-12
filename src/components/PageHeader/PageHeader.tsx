@@ -31,7 +31,7 @@ const StyledPageHeader = styled.div`
 
 const StyledIcon = styled.div`
   font-size: 96px;
-  height: 100px;
+  height: 100%;
   line-height: 96px;
   text-align: center;
   width: 162px;
@@ -41,8 +41,10 @@ const StyledTitle = styled.h1`
   color: ${props => props.theme.color.grey[100]};
   font-size: 28px;
   font-weight: 700;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: 90%;
+  text-align: center;
 `
 
 const StyledSubtitle = styled.h3`

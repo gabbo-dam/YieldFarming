@@ -97,8 +97,8 @@ interface StyledButtonProps {
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-  width: 120px;
-  height: 50px;
+  min-width: 120px;
+  min-height: 50px;
   align-items: center;
   background-color: ${props => props.background==='secondary' ? '#43D26F' : ( props.background==='tertiary' ? '#1A2848' : '#FF48A1')};
   border: ${props => props.background==='tertiary' ? '1px solid #FF48A1' : '0'};
@@ -120,6 +120,8 @@ const StyledButton = styled.button<StyledButtonProps>`
     // background-color: ${props => props.color};
     // color: ${props => props.theme.color.grey[900]};
   }
+
+
 `
 
 const StyledLink = styled(Link)`

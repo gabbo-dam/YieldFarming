@@ -34,8 +34,10 @@ const Harvest: React.FC<HarvestProps> = ({ farm }) => {
             <CardIcon>
               <TokenSymbol symbol={farm.earnToken.symbol} />
             </CardIcon>
+            <StyledDiv >
             <Value value={getDisplayBalance(earnings)} />
             <Label text="LAYERx Earned" />
+            </StyledDiv>
           </StyledCardHeader>
           <StyledCardActions>
             <Button onClick={onReward} disabled={earnings.eq(0)} text="Settle" size='lg' />
@@ -50,11 +52,14 @@ const StyledCardHeader = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  @media (max-width: 768px) {
+    align-items: left;
+    flex-direction: row;
+  }
 `;
 const StyledCardActions = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: ${(props) => props.theme.spacing[6]}px;
   width: 100%;
 `;
 
@@ -69,6 +74,16 @@ const StyledCardContentInner = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
 `;
+
+const StyledDiv = styled.div`
+@media (max-width: 768px) {
+  margin: 0 0 0 30px;
+}
+ `
 
 export default Harvest;

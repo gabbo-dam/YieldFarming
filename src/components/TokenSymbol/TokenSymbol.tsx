@@ -44,7 +44,12 @@ const TokenSymbol: React.FC<VoodooLogoProps> = ({ symbol, size = 64 }) => {
   } else if (symbol==='ETH_PROPHET-UNI-LPv2') {
     return <img width={64} height={64} style={{borderRadius:'50px'}} src="https://i.ibb.co/xHHgKJ4/icon.jpg" alt="Trinity"/>
   } else if (symbol==='LAYERx_ETH-UNI-LPv2') {
-    return <img width={64} height={64} src={iconchehat} alt={iconchehat} />
+    
+    return (
+      <div style={{width:'100px', height: '100px', border:'3px solid #E5E5E5', borderRadius:'100px', backgroundColor:'#FFFFFF', display: 'flex', justifyContent:'center', alignItems:'center'}}>
+        <img width={64} height={64} src={iconchehat} alt={iconchehat} />
+      </div>
+    )
   }else {
     return (
       <img

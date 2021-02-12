@@ -81,10 +81,12 @@ const Stake: React.FC<StakeProps> = ({ farm }) => {
                }
               })()}
             </CardIcon>
-            <Value value={getDisplayBalance(stakedBalance, farm.depositToken.decimal)} />
-            <div style={{textAlign: 'center', width: '90%'}}>
-            <Label text={`${farm.depositTokenName} Staked`} />
-            </div>
+            <StyledDiv>
+              <Value value={getDisplayBalance(stakedBalance, farm.depositToken.decimal)} />
+              <div style={{textAlign: 'center', width: '90%'}}>
+              <Label text={`${farm.depositTokenName} Staked`} />
+              </div>
+            </StyledDiv>
           </StyledCardHeader>
           <StyledCardActions>
             {approveStatus !== ApprovalState.APPROVED ? (
@@ -127,6 +129,10 @@ const StyledCardHeader = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  @media (max-width: 768px) {
+    align-items: left;
+    flex-direction: row;
+  }
 `;
 const StyledCardActions = styled.div`
   display: flex;
@@ -143,9 +149,20 @@ const StyledActionSpacer = styled.div`
 const StyledCardContentInner = styled.div`
   align-items: center;
   display: flex;
+  text-align: center;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
 `;
+
+const StyledDiv = styled.div`
+@media (max-width: 768px) {
+  margin: 0 0 0 30px;
+}
+ `
 
 export default Stake;

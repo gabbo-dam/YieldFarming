@@ -10,7 +10,7 @@ const Logo: React.FC = () => {
   return (
     <StyledLogo>
       <StyledLink href="/">
-        <img src={logo} alt="logo"/>
+        <img src={logo} alt="logo" width='100%'/>
       </StyledLink>
     </StyledLogo>
   );
@@ -19,6 +19,7 @@ const Logo: React.FC = () => {
 const StyledLogo = styled.div`
   align-items: center;
   display: flex;
+
 `;
 
 const StyledLink = styled.a`
