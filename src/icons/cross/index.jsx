@@ -8,6 +8,7 @@ function Cross(props) {
       height={13.828}
       viewBox="0 0 13.828 13.828"
       {...props}
+      cursor='pointer'
     >
       <defs>
         <style>

@@ -27,8 +27,8 @@ const TxModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const isEmpty = (confirmed?.length + pending?.length) == 0;
   return (
     <StyledModal>
-      <div style={{ textAlign:'right'}}>
-        <Cross />
+      <div style={{ textAlign:'right', paddingBottom: '20px'}}>
+        <Cross onClick={() => onDismiss()} />
       </div>
       <StyledTitleArea>
       

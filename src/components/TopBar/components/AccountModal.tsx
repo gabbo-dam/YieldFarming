@@ -25,8 +25,8 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
 
   return (
     <Modal>
-      <div style={{ textAlign:'right'}}>
-        <Cross />
+      <div style={{ textAlign:'right', paddingBottom: '20px'}}>
+        <Cross onClick={() => onDismiss()} />
       </div>
       <ModalTitle text="My Wallet" />
 
