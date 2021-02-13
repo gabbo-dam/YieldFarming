@@ -33,6 +33,7 @@ const TokenInput: React.FC<TokenInputProps> = ({
         onChange={onChange}
         placeholder="0"
         value={value}
+        width={'50px'}
       />
     </StyledTokenInput>
   )
